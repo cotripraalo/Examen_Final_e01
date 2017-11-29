@@ -46,10 +46,9 @@ public class Tarjetas extends javax.swing.JFrame {
         Mensaje1 = new javax.swing.JLabel();
         OtrosMetoPago1 = new javax.swing.JButton();
         ConfCompra2 = new javax.swing.JButton();
+        ImgTarjeta1 = new javax.swing.JLabel();
         ImgTarjeta2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
         txtme = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -117,9 +116,9 @@ public class Tarjetas extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BCP (4).png"))); // NOI18N
+        ImgTarjeta1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BCP (4).png"))); // NOI18N
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/visam (1).png"))); // NOI18N
+        ImgTarjeta2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/visam (1).png"))); // NOI18N
 
         javax.swing.GroupLayout PanelPrincipalLayout = new javax.swing.GroupLayout(PanelPrincipal);
         PanelPrincipal.setLayout(PanelPrincipalLayout);
@@ -167,14 +166,10 @@ public class Tarjetas extends javax.swing.JFrame {
                                 .addComponent(EscribirNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelPrincipalLayout.createSequentialGroup()
                                 .addGap(19, 19, 19)
-                                .addComponent(jLabel2)))))
-                .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                        .addComponent(ImgTarjeta2)
-                        .addGap(354, 354, 354))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPrincipalLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(36, 36, 36))))
+                                .addComponent(ImgTarjeta2)))))
+                .addGap(18, 18, 18)
+                .addComponent(ImgTarjeta1)
+                .addGap(36, 36, 36))
             .addGroup(PanelPrincipalLayout.createSequentialGroup()
                 .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelPrincipalLayout.createSequentialGroup()
@@ -193,13 +188,12 @@ public class Tarjetas extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                        .addComponent(ImgTarjeta2)
                         .addGap(40, 40, 40)
-                        .addComponent(jLabel1))
+                        .addComponent(ImgTarjeta1))
                     .addGroup(PanelPrincipalLayout.createSequentialGroup()
                         .addComponent(Aceptamos1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel2)
+                        .addComponent(ImgTarjeta2)
                         .addGap(18, 18, 18)
                         .addComponent(ImgTarjetas1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -228,10 +222,10 @@ public class Tarjetas extends javax.swing.JFrame {
                 .addGap(30, 30, 30))
         );
 
-        jButton1.setText("Salir");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
 
@@ -250,7 +244,7 @@ public class Tarjetas extends javax.swing.JFrame {
                 .addGap(207, 207, 207)
                 .addComponent(txtme, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
         );
         jPanel1Layout.setVerticalGroup(
@@ -260,7 +254,7 @@ public class Tarjetas extends javax.swing.JFrame {
                 .addComponent(PanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
                     .addComponent(txtme, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -295,9 +289,9 @@ public class Tarjetas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_OtrosMetoPago1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     private void ConfCompra2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfCompra2ActionPerformed
        txtme.setText("Se hizo Satisfactoriamente su Compra");
@@ -349,6 +343,7 @@ public class Tarjetas extends javax.swing.JFrame {
     private javax.swing.JTextField EscribirNombre1;
     private javax.swing.JTextField EscribirNumero2;
     private javax.swing.JLabel FechaCaducidad4;
+    private javax.swing.JLabel ImgTarjeta1;
     private javax.swing.JLabel ImgTarjeta2;
     private javax.swing.JLabel ImgTarjetas1;
     private javax.swing.JLabel Mensaje1;
@@ -357,9 +352,7 @@ public class Tarjetas extends javax.swing.JFrame {
     private javax.swing.JButton OtrosMetoPago1;
     private javax.swing.JLabel PagoconTarjeta1;
     private javax.swing.JPanel PanelPrincipal;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel txtme;
     // End of variables declaration//GEN-END:variables
