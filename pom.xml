@@ -30,7 +30,7 @@
             <version>SNAPSHOT</version>
         </dependency>
     </dependencies>
-    <name>s23ejercicio01</name>
+    <name>s23ejercicio</name>
     <repositories>
         <repository>
             <id>unknown-jars-temp-repo</id>

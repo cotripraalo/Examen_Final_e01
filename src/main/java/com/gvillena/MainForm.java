@@ -469,7 +469,10 @@ public class MainForm extends javax.swing.JFrame {
         
         if (!evt.getValueIsAdjusting()) {
             int indiceSeleccionado = lstEquiposMoviles.getSelectedIndex();
-            if (indiceSeleccionado != -1) {
+            if (indiceSeleccionado == -1) {
+                                                     
+            }
+           else if (indiceSeleccionado == 0) {
                 
                 TelefonoMovil telMovSel = ListaTelefonosMoviles.get(indiceSeleccionado);                
                 
@@ -482,6 +485,23 @@ public class MainForm extends javax.swing.JFrame {
                 lblPantalla.setText(pantalla);
                 lblCamara.setText(camara);
                 lblProcesador.setText(procesador);
+                lblPrecio.setText("2700");
+                        
+            }
+          else  if (indiceSeleccionado == 1) {
+                
+                TelefonoMovil telMovSel = ListaTelefonosMoviles.get(indiceSeleccionado);                
+                
+                String descripcion = telMovSel.getDescripcion();
+                String pantalla = telMovSel.getPantalla();
+                String camara = telMovSel.getCamara();
+                String procesador = telMovSel.getProcesador();
+                
+                lblDescripcion.setText(descripcion);
+                lblPantalla.setText(pantalla);
+                lblCamara.setText(camara);
+                lblProcesador.setText(procesador);
+                lblPrecio.setText("3700");
                         
             }
         }        

@@ -5,15 +5,16 @@
  */
 package com.gvillena;
 
-import java.io.BufferedWriter;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.net.IDN;
-import java.nio.Buffer;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import org.json.simple.JSONObject;
 
 /**
  *
@@ -21,13 +22,11 @@ import javax.swing.JOptionPane;
  */
 public class Tarjetas extends javax.swing.JFrame {
     
+       
     
-    
-     public  double codigo=0 , numero=0 , total=0 , dia=0 , mes=0 ;
-     public  String nombre="" , plan ="", modelo="";
-    public void me(){
-        System.out.println("Se hizo satisfactioramente su compra");
-    }
+     public  Integer codigo=0 , numero=0 , dia=0 , mes=0 ;
+     public  String nombre="" ;
+   
     public Tarjetas() {
         initComponents();
         setLocationRelativeTo(null);
@@ -125,7 +124,8 @@ public class Tarjetas extends javax.swing.JFrame {
             }
         });
 
-        ImgTarjeta1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BCP (4).png"))); // NOI18N
+        ImgTarjeta1.setBackground(new java.awt.Color(204, 204, 204));
+        ImgTarjeta1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/tarjcredito.png"))); // NOI18N
 
         ImgTarjeta2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/visam (1).png"))); // NOI18N
 
@@ -353,23 +353,28 @@ public class Tarjetas extends javax.swing.JFrame {
     public void mostrarventa() throws Exception{
     
         nombre=String.format(EscribirNombre1.getText());
-        numero = Double.parseDouble(EscribirNumero2.getText());
-        codigo = Double.parseDouble(EscribirCodigo3.getText());
-        dia =Double.parseDouble(EscribirDia4.getText());
-        mes =Double.parseDouble(EscribirMes5.getText());
+        numero = Integer.parseInt(EscribirNumero2.getText());
+        codigo = Integer.parseInt(EscribirCodigo3.getText());
+        dia =Integer.parseInt(EscribirDia4.getText());
+        mes =Integer.parseInt(EscribirMes5.getText());
         
-       File fi = new File("D:\\factura.txt");
-        FileWriter fw = new FileWriter(fi);
-        BufferedWriter bw = new BufferedWriter(fw);
-        PrintWriter pw = new PrintWriter(bw);
-        pw.write("Nombre:   " + nombre);
-        pw.append("\r\nNumero de la Tarjeta:  "+ numero);
-        pw.append("\r\nFecha de caducidad de la Tarjeta: " + "\tDia:  "+ dia);
-        pw.append("Mes:  " + mes);
+               
+        JSONObject obj = new JSONObject(); 
+        obj.put("TIENDA" , "CLARO PERU");
+        obj.put("Nombre:   " , nombre);
+        obj.put("Numero de la Tarjeta:  ", numero);
+        obj.put("Codigo de Seguridad: " , codigo);
+        obj.put("Fecha de caducidad de la Tarjeta: " + "Dia ", dia);
+        obj.put("Mes " , mes);
         
-        bw.close();
-        pw.close();
-                
+            
+        FileWriter fw= new FileWriter("D:\\jsonFactura.txt");
+        fw.write(obj.toJSONString());
+        fw.flush();
+        fw.close();
+        
+        
+                    
     }
     /**
      * @param args the command line arguments

@@ -341,8 +341,11 @@
             </Component>
             <Component class="javax.swing.JLabel" name="ImgTarjeta1">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/BCP (4).png"/>
+                  <Image iconType="3" name="/img/tarjcredito.png"/>
                 </Property>
               </Properties>
             </Component>
